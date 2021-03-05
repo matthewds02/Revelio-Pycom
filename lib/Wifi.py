@@ -1,21 +1,11 @@
-#!/usr/bin/env python
-"""
-Info about the project
-"""
+#https://docs.pycom.io/tutorials/networks/wlan/
+from network import WLAN
+import machine
+wlan = WLAN(mode=WLAN.STA)
 
-# Generic/Built-in
-import
+wlan.connect(ssid='IoT', auth=(WLAN.WPA2, 'KdGIoT92!'))
+while not wlan.isconnected():
+    machine.idle()
+print("WiFi connected succesfully")
+print(wlan.ifconfig())
 
-...
-
-# Owned
-__author__ = "Matthew De Schepper"
-__email__ = "matthew.deschepper@student.kdg.be"
-__status__ = "Dev"
-
-
-def main():
-
-
-if __name__ == '__main__':  # code to execute if called from command-line
-    main()
