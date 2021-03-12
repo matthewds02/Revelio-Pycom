@@ -1,3 +1,3 @@
-from wifi import *
+from ultrasonic import *
 
-wifi()
+Sensor()
