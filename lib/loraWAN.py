@@ -11,10 +11,7 @@ def connect():
     app_key = ubinascii.unhexlify('2BFB4B88EDA6D18D099B6F7736EB6E6E')
 
     lora.join(activation=LoRa.OTAA, auth=(app_eui, app_key), timeout=0)
-
-    while not lora.has_joined() and tijd <= 5:
-        tijd += 1
-        time.sleep(2.5)
+    
     if lora.has_joined():
         print('Joined')
         return True
@@ -30,3 +27,4 @@ def send(data):
     s.send(packet)
     time.sleep(10)
     s.setblocking(False)
+
