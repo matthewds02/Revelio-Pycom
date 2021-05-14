@@ -1,3 +1,7 @@
 from ultrasonic import *
+import LORAWAN
 
-Sensor()
+if LORAWAN.connect():
+    while True:
+        Sensor()
+        LORAWAN.send(SUM)
