@@ -1,7 +1,11 @@
 from ultrasonic import *
-import LORAWAN
+import loraWAN
+import wifi
+import pycom
 
-if LORAWAN.connect():
+wifi.wifi_connect()
+if loraWAN.connect():
     while True:
         Sensor()
-        LORAWAN.send(SUM)
+        distance = Sensor()
+        loraWAN.send(distance)
