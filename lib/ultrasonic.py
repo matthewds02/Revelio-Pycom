@@ -10,7 +10,7 @@ def Sensor():
         DATA_H = int(uart.read(2)[0])
         DATA_L = int(uart.read(3)[0])
         SUM = DATA_H*256 + DATA_L
-        if int(SUM/10) < 1000 and int(SUM/10) > 10:
-            print("LENGTE",int(SUM/10), "cm")
+        if int(SUM/10) < 1000 and int(SUM/10)> 10:
+            print("LENGTE:",int(SUM/10), "cm")
         if int(SUM/10) <= 10:
             print("Je komt wel heel dichtbij..., namelijk ",int(SUM/10), "cm")
